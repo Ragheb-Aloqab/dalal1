@@ -1,0 +1,103 @@
+<x-app-layout-admin>
+    <x-slot name="header">
+        <x-admin.title text="قائمة الشقق" />
+        <x-admin.breadcrumb :items="[
+            ['url' => route('admin.dashboard.index'), 'icon' => 'ti ti-home', 'label' => 'الصفحة الرئيسية'],
+            ['label' => 'الشقق'],
+        ]" />
+    </x-slot>
+
+
+    <x-admin.search-and-add searchUrl="{{ route('admin.apartments.index') }}"
+        createUrl="{{ route('admin.apartments.create') }}" />
+
+    <x-admin.table>
+        <x-admin.table-head>
+            <x-admin.table-header>
+                المزود
+            </x-admin.table-header>
+
+            <x-admin.table-header>
+                الوصف
+            </x-admin.table-header>
+
+            <x-admin.table-header>
+                الحدود
+            </x-admin.table-header>
+            <x-admin.table-header>
+                السعر
+            </x-admin.table-header>
+            <x-admin.table-header>
+                عدد الغرف
+            </x-admin.table-header>
+            <x-admin.table-header>
+                عدد الحمامات
+            </x-admin.table-header>
+
+            <x-admin.table-header>
+                حالة الشقة
+            </x-admin.table-header>
+            <x-admin.table-header>
+                الإجراءات
+            </x-admin.table-header>
+        </x-admin.table-head>
+        <x-admin.table-body>
+            @foreach ($reals as $real)
+                <tr class="search-items">
+                    <td class="p-4 ps-0 whitespace-nowrap">
+                        <div class="flex items-center gap-3">
+                            <div class="">
+                                <img src="{{ asset($real->advertisement->provider->user->avatar ? 'storage/profile/' . $real->advertisement->provider->user->avatar : 'assets/images/profile/user-1.jpg') }}"
+                                    class="w-12 h-12 rounded-full"
+                                    alt="{{ $real->advertisement->provider->user->name }}" />
+                            </div>
+                            <div>
+                                <h6 class="mb-1 user-name text-md"
+                                    data-name="{{ $real->advertisement->provider->user->name }}">
+                                    {{ $real->advertisement->provider->user->name }}
+                                </h6>
+                                <p class="text-xs user-work text-bodytext dark:text-darklink">
+                                <div class="flex items-center ">
+                                    <span
+                                        class="px-2 rounded-sm badge-xs bg-lightprimary text-primary dark:bg-darkprimary dark:text-primary ">
+                                        {{ $real->advertisement->provider->user->email }}
+                                    </span>
+
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <x-admin.table-data>
+                        {{ Str::limit($real->description, 50, '...') }}
+                    </x-admin.table-data>
+                    <x-admin.table-data>
+                        {{ Str::limit($real->boundaries, 50, '...') }}
+                    </x-admin.table-data>
+                    <x-admin.table-data>
+                        {{ $real->price }}
+                    </x-admin.table-data>
+                    <x-admin.table-data>
+                        {{ $real->realEstateable->rooms_number }}
+                    </x-admin.table-data>
+                    <x-admin.table-data>
+                        {{ $real->realEstateable->bathrooms_number }}
+                    </x-admin.table-data>
+
+                    <x-admin.table-data>
+                        <span
+                            class="px-2 rounded-sm badge-xs
+                                                @if ($real->realEstateable->condition == 'new') bg-lightsuccess text-success dark:bg-darksuccess dark:text-success
+                                                @elseif ($real->realEstateable->condition == 'old') bg-lightprimary text-primary dark:bg-darkprimary dark:text-primary
+                                                @else  bg-lighterror text-error  dark:bg-darkerror dark:text-error @endif">
+                            {{ ucfirst($real->realEstateable->condition == 'new' ? 'جديد' : 'قديم') }}
+                        </span>
+                    </x-admin.table-data>
+                    <x-admin.table-data>
+                        <x-admin.table-action-buttons :viewUrl="route('admin.apartments.show', $real->id)" :editUrl="route('admin.apartments.edit', $real->id)" :deleteUrl="route('admin.apartments.destroy', $real->id)" />
+                    </x-admin.table-data>
+                </tr>
+            @endforeach
+        </x-admin.table-body>
+    </x-admin.table>
+</x-app-layout-admin>

@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import "../../node_modules/@tabler/icons-webfont/tabler-icons.min.css"; */
+
+@layer base {
+    :root {
+        /* Text Colors */
+        --text-50: #F9FAFB;    /* Gray-50 */
+        --text-100: #F3F4F6;   /* Gray-100 */
+        --text-200: #E5E7EB;   /* Gray-200 */
+        --text-300: #D1D5DB;   /* Gray-300 */
+        --text-400: #9CA3AF;   /* Gray-400 */
+        --text-500: #6B7280;   /* Gray-500 */
+        --text-600: #4B5563;   /* Gray-600 */
+        --text-700: #374151;   /* Gray-700 */
+        --text-800: #1F2937;   /* Gray-800 */
+        --text-900: #111827;   /* Gray-900 */
+        --text-950: #0D1117;   /* Dark Gray */
+
+        /* Background Colors */
+        --background-50: #FFFFFF;   /* White */
+        --background-100: #F9FAFB;  /* Gray-50 */
+        --background-200: #F3F4F6;  /* Gray-100 */
+        --background-300: #E5E7EB;  /* Gray-200 */
+        --background-400: #D1D5DB;  /* Gray-300 */
+        --background-500: #9CA3AF;  /* Gray-400 */
+        --background-600: #6B7280;  /* Gray-500 */
+        --background-700: #4B5563;  /* Gray-600 */
+        --background-800: #374151;  /* Gray-700 */
+        --background-900: #1F2937;  /* Gray-800 */
+        --background-950: #111827;  /* Gray-900 */
+
+        /* Primary Colors */
+        --primary-50: #DBEAFE;     /* Blue-100 */
+        --primary-100: #BFDBFE;    /* Blue-200 */
+        --primary-200: #93C5FD;    /* Blue-300 */
+        --primary-300: #60A5FA;    /* Blue-400 */
+        --primary-400: #3B82F6;    /* Blue-500 */
+        --primary-500: #2563EB;    /* Blue-600 */
+        --primary-600: #1D4ED8;    /* Blue-700 */
+        --primary-700: #1E40AF;    /* Blue-800 */
+        --primary-800: #1E3A8A;    /* Blue-900 */
+        --primary-900: #1E40AF;    /* Dark Blue */
+        --primary-950: #172554;    /* Darker Blue */
+
+        /* Secondary Colors */
+        --secondary-50: #D1FAE5;   /* Green-100 */
+        --secondary-100: #A7F3D0;  /* Green-200 */
+        --secondary-200: #6EE7B7;  /* Green-300 */
+        --secondary-300: #34D399;  /* Green-400 */
+        --secondary-400: #10B981;  /* Green-500 */
+        --secondary-500: #059669;  /* Green-600 */
+        --secondary-600: #047857;  /* Green-700 */
+        --secondary-700: #065F46;  /* Green-800 */
+        --secondary-800: #064E3B;  /* Green-900 */
+        --secondary-900: #064E3B;  /* Dark Green */
+        --secondary-950: #033F33;  /* Darker Green */
+
+        /* Accent Colors */
+        --accent-50: #FFFBEB;      /* Amber-50 */
+        --accent-100: #FEF3C7;     /* Amber-100 */
+        --accent-200: #FDE68A;     /* Amber-200 */
+        --accent-300: #FCD34D;     /* Amber-300 */
+        --accent-400: #FBBF24;     /* Amber-400 */
+        --accent-500: #F59E0B;     /* Amber-500 */
+        --accent-600: #D97706;     /* Amber-600 */
+        --accent-700: #B45309;     /* Amber-700 */
+        --accent-800: #92400E;     /* Amber-800 */
+        --accent-900: #78350F;     /* Amber-900 */
+        --accent-950: #431407;     /* Darker Amber */
+    }
+
+    /* Dark Mode Variables */
+    .dark {
+        /* Inverted Text Colors */
+        --text-50: #F9FAFB;    /* Gray-50 */
+        --text-100: #E5E7EB;   /* Gray-200 */
+        --text-200: #D1D5DB;   /* Gray-300 */
+        --text-300: #9CA3AF;   /* Gray-400 */
+        --text-400: #6B7280;   /* Gray-500 */
+        --text-500: #4B5563;   /* Gray-600 */
+        --text-600: #374151;   /* Gray-700 */
+        --text-700: #1F2937;   /* Gray-800 */
+        --text-800: #111827;   /* Gray-900 */
+        --text-900: #0D1117;   /* Dark Gray */
+        --text-950: #0D1117;   /* Dark Gray */
+
+        /* Inverted Background Colors */
+        --background-50: #1F2937;   /* Gray-800 */
+        --background-100: #374151;  /* Gray-700 */
+        --background-200: #4B5563;  /* Gray-600 */
+        --background-300: #6B7280;  /* Gray-500 */
+        --background-400: #9CA3AF;  /* Gray-400 */
+        --background-500: #D1D5DB;  /* Gray-300 */
+        --background-600: #E5E7EB;  /* Gray-200 */
+        --background-700: #F3F4F6;  /* Gray-100 */
+        --background-800: #FFFFFF;  /* White */
+        --background-900: #FFFFFF;  /* White */
+        --background-950: #FFFFFF;  /* White */
+
+        /* Inverted Primary Colors */
+        --primary-50: #172554;    /* Darker Blue */
+        --primary-100: #1E40AF;   /* Dark Blue */
+        --primary-200: #1E3A8A;   /* Blue-800 */
+        --primary-300: #2563EB;   /* Blue-600 */
+        --primary-400: #3B82F6;   /* Blue-500 */
+        --primary-500: #60A5FA;   /* Blue-400 */
+        --primary-600: #93C5FD;   /* Blue-300 */
+        --primary-700: #BFDBFE;   /* Blue-200 */
+        --primary-800: #DBEAFE;   /* Blue-100 */
+        --primary-900: #E0F2FE;   /* Light Blue */
+        --primary-950: #E5F8FF;   /* Light Blue-50 */
+
+        /* Inverted Secondary Colors */
+        --secondary-50: #033F33;  /* Darker Green */
+        --secondary-100: #064E3B; /* Dark Green */
+        --secondary-200: #065F46; /* Green-800 */
+        --secondary-300: #047857; /* Green-700 */
+        --secondary-400: #059669; /* Green-600 */
+        --secondary-500: #10B981; /* Green-500 */
+        --secondary-600: #39F973; /* Green-400 */
+        --secondary-700: #6BFA96; /* Green-300 */
+        --secondary-800: #9CFCB9; /* Green-200 */
+        --secondary-900: #CEFDDC; /* Green-100 */
+        --secondary-950: #E6FEED; /* Light Green */
+
+        /* Inverted Accent Colors */
+        --accent-50: #431407;      /* Darker Amber */
+        --accent-100: #78350F;     /* Amber-900 */
+        --accent-200: #92400E;     /* Amber-800 */
+        --accent-300: #B45309;     /* Amber-700 */
+        --accent-400: #D97706;     /* Amber-600 */
+        --accent-500: #F59E0B;     /* Amber-500 */
+        --accent-600: #FBBF24;     /* Amber-400 */
+        --accent-700: #FCD34D;     /* Amber-300 */
+        --accent-800: #FDE68A;     /* Amber-200 */
+        --accent-900: #FEF3C7;     /* Amber-100 */
+        --accent-950: #FFFBEB;     /* Amber-50 */
+    }
+}
